@@ -16,7 +16,7 @@ Currently, two official plugins are available:
 - **React** for building interactive UI components
 - **TypeScript** for type-safe JavaScript development
 - **Tailwind CSS** for easy and responsive styling
-- **Chrome Extension API** for obvious reasons
+- **chrome-types** Chrome's API TS files for auto-completion 
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
