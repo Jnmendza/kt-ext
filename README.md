@@ -49,9 +49,26 @@ npm run dev
 - Optionally add `...tseslint.configs.stylisticTypeChecked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
+<<<<<<< HEAD
 ```js
 // eslint.config.js
 import react from "eslint-plugin-react";
+=======
+## Development
+- Hot-reload enabled for easier development.
+- Modify your code in the src folder.
+- Tailwind CSS is already configured and ready to use.
+- Run `nmp run build` to implement changes to `dist` folder
+- Go on `chrome://extensions/` and click refresh `⟳`
+
+### How to change the popup? 
+- Go on `src/chrome-extension/popup/index.tsx`
+- Once changes are done run `nmp run build` and then visit your project on `chrome://extensions/` and click refresh `⟳`
+
+### How to change the options page? 
+- Go on `src/chrome-extension/options/index.tsx`
+- Once changes are done run `nmp run build` and then visit your project on `chrome://extensions/` and click refresh `⟳`
+>>>>>>> 4842a11 (Update README.md)
 
 export default tseslint.config({
   // Set the react version
