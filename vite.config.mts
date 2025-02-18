@@ -1,18 +1,21 @@
-import { defineConfig } from "vite";
+import { defineConfig, AliasOptions } from "vite";
 import react from "@vitejs/plugin-react";
 import { viteStaticCopy } from "vite-plugin-static-copy";
-import { resolve } from "path";
-import path from "path";
+import path, { resolve } from "path";
+import tsconfigPaths from "vite-tsconfig-paths";
+
+const root = path.resolve(__dirname, "./src");
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
+      "@": root,
+    } as AliasOptions,
   },
   plugins: [
     react(),
+    tsconfigPaths(),
     viteStaticCopy({
       targets: [
         { src: "src/chrome-extension/manifest.json", dest: "." },

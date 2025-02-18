@@ -1,5 +1,5 @@
 "use server";
-import { createClientForServer } from "@/utils/supabase/server";
+import { createClientForServer } from "../utils/supabase/server";
 
 export async function fetchUserData() {
   const supabase = await createClientForServer();
