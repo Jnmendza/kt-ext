@@ -2,7 +2,6 @@
   "manifest_version": 3,
   "name": "Chrome Extension Starter",
   "version": "1.0.0",
-  "default_title": "KickTab",
   "action": {
     "default_popup": "popup.html"
   },
