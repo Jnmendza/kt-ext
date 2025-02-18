@@ -1,5 +1,3 @@
-import React from "react";
-
 interface WaterMarkProps {
   text: string;
   spinner?: boolean;
