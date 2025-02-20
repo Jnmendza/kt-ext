@@ -4,21 +4,21 @@ const supabase = createSupabaseClient();
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   console.log("TAB::", { tabId, tab });
   if (changeInfo.url?.startsWith(chrome.identity.getRedirectURL())) {
-    finishUserOAuth(changeInfo.url);
+    finishUserOAuth(changeInfo.url, tabId);
   }
 });
 
-async function finishUserOAuth(url: string | URL) {
+async function finishUserOAuth(url: string | URL, tabId: number) {
   try {
     console.log("Handling user OAuth callback...");
 
     // Extract tokens from the URL hash
-    const hashMap: { [key: string]: string } = new URL(url).hash
+    const hashMap = new URL(url).hash
       .slice(1)
       .split("&")
-      .reduce((acc: { [key: string]: string }, part) => {
+      .reduce<Record<string, string>>((acc, part) => {
         const [key, value] = part.split("=");
-        acc[key] = value;
+        acc[key] = decodeURIComponent(value);
         return acc;
       }, {});
 
@@ -39,9 +39,14 @@ async function finishUserOAuth(url: string | URL) {
 
     // Redirect to a success page
     // chrome.tabs.update(tabId, { url: "https://myapp.com/user-login-success/" });
-
+    console.log("TabID", tabId);
     console.log("Finished handling user OAuth callback");
   } catch (error) {
     console.error("Error during OAuth callback:", error);
   }
 }
+
+// Optional: Add a listener for installation or startup events
+chrome.runtime.onInstalled.addListener(() => {
+  console.log("Extension installed or updated");
+});

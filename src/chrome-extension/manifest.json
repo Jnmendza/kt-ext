@@ -13,7 +13,7 @@
     "48": "public/48.png",
     "192": "public/192.png"
   },
-  "permissions": ["identity", "storage"],
+  "permissions": ["identity", "storage", "tabs"],
   "oauth2": {
     "client_id": "622223442459-flct2dl98iqle2jovc6dpios474atee7.apps.googleusercontent.com",
     "scopes": ["openid", "email", "profile"]
