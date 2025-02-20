@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Chrome Extension Starter",
+  "name": "KickTab Live Scores",
   "version": "1.0.0",
   "action": {
     "default_popup": "popup.html"
@@ -12,6 +12,11 @@
     "32": "public/32.png",
     "48": "public/48.png",
     "192": "public/192.png"
+  },
+  "permissions": ["identity", "storage", "tabs"],
+  "oauth2": {
+    "client_id": "622223442459-flct2dl98iqle2jovc6dpios474atee7.apps.googleusercontent.com",
+    "scopes": ["openid", "email", "profile"]
   },
   "background": {
     "service_worker": "background.js",
